@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Fórum Web</title>
+</head>
+<body>
+    <h1>Posts Recentes</h1>
+    <a href="/create">➕ Criar Novo Post</a>
+    <hr>
+    {% for post in posts %}
+    <div class="post-card">
+        <h2>{{ post.titulo }}</h2>
+        <p><strong>Autor:</strong> {{ post.autor }}</p>
+        <p>{{ post.resumo }}</p>
+        <a href="/post/{{ post.id }}">Ler mais</a> | 
+        <a href="/edit/{{ post.id }}">Editar</a> |
+        <form action="/delete/{{ post.id }}" method="post" style="display:inline;">
+            <button type="submit" onclick="return confirm('Excluir?')">Excluir</button>
+        </form>
+    </div>
+    {% endfor %}
+</body>
+</html>

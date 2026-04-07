@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Editar Post</title>
+</head>
+<body>
+    <h1>Editar: {{ post.titulo }}</h1>
+    <form method="post">
+        <input type="text" name="titulo" value="{{ post.titulo }}" required><br>
+        <input type="text" name="resumo" value="{{ post.resumo }}" required><br>
+        <textarea name="conteudo" required>{{ post.conteudo }}</textarea><br>
+        <input type="text" name="autor" value="{{ post.autor }}" required><br>
+        <button type="submit">Atualizar</button>
+    </form>
+    <a href="/">Cancelar</a>
+</body>
+</html>
